@@ -1,0 +1,27 @@
+Clone Git Hub in local Computer:
+
+    copy the cloning path from github by clicking the code button with green background color and paste that cloning path by using the command 
+
+    git clone Paste_clone_path_here
+
+    then press enter, then the repository from the remote will be copied to our local machine..
+
+
+now we have to add the files in to the github how?
+
+    copy the file that you will to post in guthub and paste in the github folder that you cloned.
+     and then go to cmd and type the following commands..
+
+        ==> git status // here by this command we will see the files that are modified or different from the remote repository(that is github)
+        ==> git add . //here by this command we will add the files that are modified for the next step commiting.
+        ==> git commit -m "here type the message why/ what are you modifying here" //here type the message why/ what are you modifying here 
+                            so that your collegs who is working under the same project will come to know what this commit is for!.
+        ==> git push //here by using this command we will push the files that are already commited to the remote location that is GitHub.
+
+to undo the changes to the file that is already commited?
+
+    inorder to undo the changes for the files that are already commited by usign the following commands:
+
+        ==> git reset HEAD filename //here we will move the file from the commited stage to uncommit stage 
+        ==> git checkout -- filename  //once the file is moved from the commited stage to uncommit stage by using the above
+                                        command now we use this checkout command to undo the changes that we perfomred.
