@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function f1() {
+            var cities = ["Hyderabad", "Chennai", "Mumbai" + "bangolre"];
+            document.write("Before adding new cities: " + cities + "<br>");
+
+            var addcities = cities.splice(4, 5, "puna", "goa")
+            document.write("List of cities about to add: " + addcities(4, 5) + "<br>");
+            var addedcities = cities.slice(0, 1);
+            document.write("Before adding new cities: " + cities + "<br>" + "List of cities about to add: " + addcities + "<br>" + "After Adding new cities: " + addedcities + "<br>");
+
+        }
+        f1();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

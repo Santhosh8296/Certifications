@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function AssignOp() {
+            var java = document.getElementById("optJava");
+            var dot = document.getElementById("optDot");
+            var python = document.getElementById("optPython");
+            var msg = document.getElementById("msg");
+            var courses = "";
+            if (java.checked) {
+                courses += java.value + "<br>";
+                console.log("List of Courses Selected till now: " + courses);
+            }
+            if (dot.checked) {
+                courses += dot.value + "<br>";
+                console.log("List of Courses Selected till now: " + courses);
+            }
+            if (python.checked) {
+                courses += python.value + "<br>";
+                console.log("List of Courses Selected till now: " + courses);
+            }
+            msg.innerHTML = "List of Selected courses are: " + "<br>" + courses;
+            console.log("List of Courses Selected till now: " + courses);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend border="1">Select Courses <br> Assignment Operators</legend>
+            <ul>
+                <li><input type="checkbox" id="optJava" value="java">Java</li>
+                <li><input type="checkbox" id="optDot" value=".Net">.Net</li>
+                <li><input type="checkbox" id="optPython" value="Python">Python</li>
+            </ul>
+            <br>
+            <input type="button" value="submit" onclick="AssignOp()">
+        </fieldset>
+        <br>
+
+    </div>
+
+    <div id="msg" align="center"></div>
+</body>
+
+</html>

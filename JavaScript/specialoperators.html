@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function logindetials() {
+            var uname = document.getElementById("name").value;
+            var pass = document.getElementById("pwd").value;
+
+            var msg = document.getElementById("msg");
+            var userdetails = { Username: "John", password: "admin" };
+
+            (uname == userdetails.Username && pass == userdetails.password) ? document.write("Login is Successfull!") : msg.innerHTML = "Invalid Username/Pssword"
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend>Login Details</legend>
+            <dl>
+                <dt>Username:</dt>
+                <dd><input type="text" id="name"></dd>
+                <dt>Password:</dt>
+                <dd><input type="password" id="pwd"></dd>
+                <br>
+                <input type="button" value="Login" onclick="logindetials()">
+            </dl>
+        </fieldset>
+    </div>
+    <div align="center">
+        <h2 id="msg"></h2>
+    </div>
+</body>
+
+</html>

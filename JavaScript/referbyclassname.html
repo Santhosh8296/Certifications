@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Refering HTML elements by ClassName
+        <!-- CSS provides a class selector defined with dot(.), HTML elemens can use CSS clases by using the attribute class javascript can access elements that are using specific CSS class by using the method -->
+        <!-- "document.getElementByClassName()" is used to access all elements of specified CSS Class Selector defined with dot(.). -->
+    </title>
+    <script>
+        function referbyclassname() {
+            var x = document.getElementsByClassName("welcome");
+
+            alert("total no of img tags are" + x.length)
+        }
+    </script>
+    <style>
+        .welcome {
+            color: green;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body onload="referbyclassname()">
+    <h2 class="welcome">welcome to Javascript</h2>
+    <div>
+        <img src="./imgs/HS.jpg" width="300" height="300" border="1" align="center">
+
+    </div>
+    <div>
+
+        </form>
+    </div>
+</body>
+
+</html>

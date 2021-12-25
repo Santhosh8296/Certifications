@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function ProductInfo() {
+            var id = document.getElementById("pid").value;
+            var name = document.getElementById("name").value;
+            var pp = document.getElementById("price").value;
+            var sa = document.getElementById("SA").value;
+            var product = [id, name, pp, sa];
+            document.getElementById("pdid").innerText = product[0];
+            document.getElementById("pdne").innerText = product[1];
+            document.getElementById("pdpe").innerText = product[2];
+            document.getElementById("skay").innerText = product[3];
+
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <form>
+            Product Id: <input type="number" id="pid">
+            Produ Name: <input type="text" id="name">
+            Product Price: <input type="number" id="price">
+            Stock Availability: <select name="stock" id="SA">
+                <option value="Select the Product Availabiltiy Status">Product Availabiltiy Status</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <input type="button" value="Update Product Info" onclick="ProductInfo()">
+        </form>
+    </div>
+
+    <div id="msg">
+        <table border="1" id="msg">
+
+            <tr>
+                <td> Product Id</td>
+                <td id="pdid"></td>
+            </tr>
+
+            <tr>
+                <td> Product Name</td>
+                <td id="pdne"></td>
+            </tr>
+
+            <tr>
+                <td> Product Price</td>
+                <td id="pdpe"></td>
+            </tr>
+
+            <tr>
+                <td> Stock Availabiltiy</td>
+                <td id="skay"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

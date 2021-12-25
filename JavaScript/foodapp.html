@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        img {
+            width: 100;
+            height: 100;
+        }
+
+        tr {
+            background-color: maroon;
+            color: white;
+            text-align: center;
+        }
+
+        dt {
+            font-weight: bold;
+            background-color: maroon;
+            color: white;
+        }
+    </style>
+    <script>
+
+        function OrderDetails() {
+            document.getElementById("Order Summary").style.display = "block";
+            var Username = document.getElementById("cname");
+            var MobielNo = document.getElementById("cmobile");
+            burger = document.getElementById("optBurger");
+            roller = document.getElementById("optRoller");
+            fries = document.getElementById("optFries");
+            var mcost = 0;
+            var acost = 0;
+            var mname = " ";
+            var aname = " ";
+
+            if (burger.checked) {
+                mcost = 2.39;
+                mname = burger.value;
+            }
+            if (roller.checked) {
+                mcost = 4;
+                mname = roll.value;
+            }
+            if (fries.checked) {
+                acost = 1.99;
+                mcost += acost;
+                aname += fries.value + "<br>";
+            }
+            document.getElementById("lblName").innerHTML = Username.value;
+            document.getElementById("lblmobile").innerHTML = MobielNo.value;
+            document.getElementById("lblmeal").innerHTML = mname;
+            document.getElementById("lbladd").innerHTML = aname;
+            document.getElementById("lblAmount").innerHTML = mcost;
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <font size="6">
+            <table width="800" border="2" cellspacing="4" cellpadding="4" align="center" id="orderform">
+
+                <tr>
+                    <td colspan="2">Customer Details
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        customer name:
+                    </td>
+                    <td><input type="text" id="cname"></td>
+                </tr>
+                <tr>
+                    <td>Customer Mobile No:</td>
+                    <td><input type="number" id="cmobile"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">select a meal:</td>
+                </tr>
+                <tr>
+                    <td><img src="./imgs/nw1.jpg" width="100" height="100">
+                        <br>
+                        <input type="radio" name="meal" id="optBurger" value="omgBurger"
+                            onchange="billcost()">Burger(&#8377;$2.39)
+                    </td>
+                    <td><img src="./imgs/print.png" width="100" height="100">
+                        <br>
+                        <input type="radio" name="meal" id="optRoller" value="omgRoller">Chicken Roller(&#8377;$4)
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        select Ad-on'S
+                    </td>
+                </tr>
+                <tr>
+                    <td><img src="./imgs/HS.jpg" width="100" height="100"><br><input type="checkbox" id="optFries"
+                            value="largefries">Large
+                        Fries(&#8377;$1.99)</td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Place Order" onclick="OrderDetails()"></td>
+                </tr>
+            </table>
+            <br>
+            <dl id="Order Summary" style="display:none;">
+                <h2>Order Summary</h2>
+                <dt>Customer Name</dt>
+                <dd id="lblName"></dd>
+                <dt>mobile</dt>
+                <dd id="lblmobile"></dd>
+                <dt>meal</dt>
+                <dd id="lblmeal"></dd>
+                <dt>AD-on'S</dt>
+                <dd id="lbladd"></dd>
+                <dt>total bill amount</dt>
+                <dd id="lblAmount"></dd>
+                <br>
+                <input type="button" value="print bill" onclick="window.print()">
+            </dl>
+    </div>
+
+    <!-- <div>
+        <fieldset>
+            <legend>Ordered Food Bill: </legend>
+            <table border="2">
+                <tr>
+                    <td>
+                        Customer Name:
+                    </td>
+                    <td id="CN"></td>
+                </tr>
+                <tr>
+                    <td>Customer Mobile No:</td>
+                    <td id="CMN"></td>
+                </tr>
+                <tr>
+                    <td>Order Details:</td>
+                    <td id="OD"></td>
+                </tr>
+                <tr>
+                    <td>Total Bill:</td>
+                    <td id="TB"></td>
+                </tr>
+
+            </table>
+        </fieldset>
+    </div> -->
+</body>
+
+</html>

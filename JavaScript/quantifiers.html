@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function verifypassword() {
+            var pwd = document.getElementById("txtpwd").value;
+            console.log("the password enterted is: " + pwd);
+            var msg = document.getElementById("msg");
+            console.log("the message that prompted is: " + msg);
+            var grade = document.getElementById("grade");
+
+            function showGrade(min, max, value, low, high) {
+                grade.min = min;
+                grade.max = max;
+                grade.value = value;
+                grade.low = low;
+                grade.high = high;
+            }
+            var pat = /(?=.*[A-Z])\w{4,15}/;
+            if (pwd.match(pat)) {
+                msg.innerHTML = "strong password";
+                showGrade(1, 100, 100, 0, 0);
+            }
+            else {
+                // window.alert("Please find the follwing pattern to enter the password:", "<br>" + "<ol type='1'><li>First Letter should be a Capital Letter from [A-z].</li><li>the Second Condition is from second letter to till 15th Letter it should be either small or capital alphabets from [a-zA-Z0-9] and also numbers from 0-9.</li></ol>");
+                if (pwd.length > 4) {
+                    msg.innerHTML = "poor password";
+                    showGrade(1, 100, 100, 60, 80);
+                }
+                else {
+                    msg.innerHTML = "weak password";
+                    showGrade(1, 100, 100, 40, 80);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend>
+                Password:
+            </legend>
+            <input type="password" id="txtpwd" onkeyup="verifypassword()">
+            <meter min="1" max="100" value="0" low="0" high="0" id="grade"></meter>
+            <span id="msg"></span>
+        </fieldset>
+    </div>
+</body>
+
+</html>

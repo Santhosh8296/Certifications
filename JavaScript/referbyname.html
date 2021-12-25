@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Refering HTML elements by Name
+    </title>
+    <script>
+        function referbyname() {
+            pic.src = "./imgs/HS.jpg"
+            home.btn.value = "Register"
+        }
+    </script>
+</head>
+<!-- Disadvantage of using refering by name is : here In form tag name acts as parent and button tag name acts as child element so we cannot access the child element with out accessing the parent element. -->
+
+<body onload="referbyname()">
+    <div>
+        <img name="pic" width="300" height="300" border="1">
+
+    </div>
+    <div>
+        <form name="home">
+            Username:<input type="text" name="username">
+            Action :<input type="button" name="btn">
+        </form>
+    </div>
+</body>
+
+</html>

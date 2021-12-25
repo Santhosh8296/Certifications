@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function f1() {
+            document.getElementById("family").innerHTML = navigator.appName;
+            document.getElementById("lang").innerHTML = navigator.language;
+            document.getElementById("cookie").innerHTML = navigator.cookieEnabled;
+            document.getElementById("agent").innerHTML = navigator.userAgent;
+
+
+            for (var i = 0; i < navigator.plugins.length; i++) {
+                document.getElementById("plug").innerHTML = navigator.plugins[i].name + "<br>";
+            }
+            var msg = document.getElementById("msg");
+            if (navigator.plugins["chrome pdf viewer" == undefined]) {
+                msg.innerHTML = "no";
+            }
+            else {
+                msg.innerHTML = "yes";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div align="center">
+        <input type="button" value="Get Browser Details" onclick="f1()">
+    </div>
+    <br>
+    <div>
+        <dl>
+            <dt>Browser Family:</dt>
+            <dd id="family"></dd>
+            <dt>Browser Language:</dt>
+            <dd id="lang"></dd>
+            <dt>Cookie Enabled/Disabled:</dt>
+            <dd id="cookie"></dd>
+            <dt>Supported On:</dt>
+            <dd id="agent"></dd>
+            <dt>Plugins Supported:</dt>
+            <dd id='plug'></dd>
+            <dt>Can User View Pdf Document:</dt>
+            <dd id="msg"></dd>
+        </dl>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Refering HTML elements by BOM heirarcy
+    </title>
+    <script>
+        function img() {
+            window.document.images[0].src = "./imgs/HS.jpg";
+            window.document.forms[0].elements[1].value = "Register";
+        }
+    </script>
+</head>
+
+<body onload="img()">
+    <div>
+        <img width="300" height="300" border="1">
+        <form>
+            Username:<input type="text">
+            Action :<input type="button">
+        </form>
+    </div>
+</body>
+
+</html>

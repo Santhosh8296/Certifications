@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Refering HTML elements by TagName
+        <!-- Every HTML element are presented by using Tag and we can access the elements directly by refering to TagName -->
+        <!-- "document.getElementByTagName()" is used to access all elements of specified tag anme and return a collection. -->
+    </title>
+    <script>
+        function referbytagname() {
+            var x = document.getElementsByTagName("img");
+            var y = document.getElementsByTagName("input");
+            alert("Dear," + y + "in your website in total no of images in page are:" + x.length)
+        }
+    </script>
+</head>
+
+<body onload="referbytagname()">
+    <div>
+        <img src="./imgs/HS.jpg" width="300" height="300" border="1" align="center">
+
+    </div>
+    <div>
+        <form name="home">
+            Username:<input type="text" value="Santhosh Reddy Konatham">
+            Action :<input type="button" id="regsbtn">
+        </form>
+    </div>
+</body>
+
+</html>

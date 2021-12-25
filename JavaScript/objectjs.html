@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .div {
+            padding: 0.5in;
+            float: left;
+        }
+    </style>
+    <script>
+
+        function f1() {
+            let stockStatus = document.getElementById('SA').value;
+
+            var isTrueSet = (stockStatus === 'true');
+            if (stockStatus) {
+                console.log("Hey!, inside if consdition...");
+                stock = "Available";
+                var consvalue = document.getElementById("pprice").value * document.getElementById("quant").value;
+                if (consvalue == null) {
+                    alert("Sorry!, Consienment Creation Failed");
+                }
+                else {
+                    alert("Success!, Consienment Creation is Successfull.")
+                    var product = {
+                        id: document.getElementById("productid")?.value,
+                        Name: document.getElementById("productname")?.value,
+                        price: document.getElementById("pprice")?.value,
+                        AOS: document.getElementById("SA")?.value,
+                        Quantity: document.getElementById("quant")?.value,
+                        ShippedTo: document.getElementById("addr")?.value,
+                        total: consvalue
+
+                        // function () {
+                        //     return product.Quantity * product.price;
+                        // }
+                    }
+
+
+                    document.getElementById("pid").innerHTML = product.id;
+                    document.getElementById("pname").innerHTML = product.Name;
+                    document.getElementById("pp").innerHTML = product.price;
+                    document.getElementById("stock").innerHTML = product.AOS;
+                    document.getElementById("quan").innerHTML = product.Quantity;
+                    document.getElementById("shipto").innerHTML = product.ShippedTo;
+                    document.getElementById("totalvalue").innerHTML = product.total;
+                }
+
+            }
+            else {
+                stock = "Out Of Stock!";
+                window.alert("Out Of Stock!, Please update the info in the Mobile Campus.");
+            }
+
+
+            //document.write("Id: " + product.id + "<br>" + "Name: " + product.Name + "<br>" + "Price: " + product.price + "<br>" + "Is in Stock: " + stock + "<br>" + "ShippedTo: " + product.ShippedTo + "<br>" + "Total Amount: " + product.total());
+        }
+
+        // function objects() {
+        //     var productinfo =
+        //         [{ Id: 1, Name: "SamsungTV", Price: "2000", pic: "./imgs/HS.jpg" },
+        //         { Id: 2, Name: "LG", Price: "1000", pic: "./imgs/nw1.jpg" },
+        //         { Id: 3, Name: "Nike", Price: "1200", pic: "./imgs/newimage.jpg" }]
+
+        // }
+        function updateTotal() {
+            var consvalue = document.getElementById("pprice")?.value * document.getElementById("quant")?.value;
+            if (consvalue) {
+                console.log('consvalue is ', consvalue)
+                document.getElementById('totalva').value = consvalue;
+            }
+        }
+        // function mouse() {
+        //     alert("you are about to change Quantity");
+        // }
+    </script>
+</head>
+
+<body>
+    <div>
+        <div class="div">
+            <fieldset>
+                <legend> Product Update Form: </legend>
+                <form>
+                    <table border="2">
+                        <th>
+                        <td>
+                            Info
+                        </td>
+
+                        </th>
+                        <tr>
+                            <td>Product Id:</td>
+                            <td><input type="number" id="productid"></td>
+                        </tr>
+                        <tr>
+                            <td>Product Name:</td>
+                            <td><input type="text" id="productname"></td>
+                        </tr>
+                        <tr>
+                            <td>Product Price:</td>
+                            <td><input type="number" id="pprice" onchange="updateTotal()">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Stock Availability: </td>
+                            <td> <select name="stock" id="SA">
+                                    <option value="Select the Product Availabiltiy Status">Product Availabiltiy Status
+                                    </option>
+                                    <option value=true>Yes</option>
+                                    <option value=false>No</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Quantity:</td>
+                            <td><input type="number" id="quant" onchange="updateTotal()"></td>
+                        </tr>
+                        <tr>
+                            <td>Shipped To:</td>
+                            <td><input type="address" id="addr"></td>
+                        </tr>
+                        <tr>
+                            <td>Total Value of the Consinment:</td>
+                            <td><input type="number" id="totalva"></td>
+                        </tr>
+                        <tr>
+                            <td>Action</td>
+                            <td><input type="button" value="Update" onclick="f1()"></td>
+                        </tr>
+                    </table>
+                </form>
+            </fieldset>
+        </div>
+        <div class="div">
+            <fieldset>
+                <legend> Updated Product Info: </legend>
+                <table border="2">
+                    <th>
+                    <td>
+                        Info
+                    </td>
+                    </th>
+                    <tr>
+                        <td>Product Id:</td>
+                        <td id="pid"></td>
+                    </tr>
+                    <tr>
+                        <td>Product Name:</td>
+                        <td id="pname"></td>
+                    </tr>
+                    <tr>
+                        <td>Product Price:</td>
+                        <td id="pp"></td>
+                    </tr>
+                    <tr>
+                        <td>In Stock or Not</td>
+                        <td id="stock"></td>
+                    </tr>
+                    <tr>
+                        <td>Quantity:</td>
+                        <td id="quan"></td>
+                    </tr>
+                    <tr>
+                        <td>Shipped To:</td>
+                        <td id="shipto"></td>
+                    </tr>
+                    <tr>
+                        <td>Total Value of the Consinment:</td>
+                        <td id="totalvalue"></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function f1() {
+            var pname = ["Samsung TV", "iPhone", "Nike", "Adiddas", "LG"];
+            var pimages = ["./imgs/HS.jpg", "./imgs/nw1.jpg", "./imgs/newwindow.jpg", "./imgs/print.png", "./imgs/nw1.jpg"];
+
+            var ProductName = document.getElementById("ProductName");
+            var pic = document.getElementById("pic");
+            var txtrange = document.getElementById("txtrange");
+
+            ProductName.innerHTML = pname[txtrange.value];
+            pic.src = pimages[txtrange.value];
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <table width="500" border="2" cellspacing="5" cellpadding="5" align="center">
+            <!-- <th>
+            <td>Image Name</td>
+            <td>Image</td>
+        </th> -->
+            <tr>
+                <td align="center" id="ProductName"></td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="pic" src="./imgs/HS.jpg" width="500" height="300">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="range" id="txtrange" min="0" max="4" value="0" onchange="f1()">
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

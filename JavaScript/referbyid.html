@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Refering HTML elements by Id
+        <!-- Every HTML element can have a refernece id by using this unique id given for elements we will refer the HTML elements -->
+        <!-- it requires a function "document.getElementById()" -->
+    </title>
+    <script>
+        function referbyid() {
+            document.getElementById("pic").src = "./imgs/HS.jpg";
+            document.getElementById("name").value = "Santhosh Reddy Konatham";
+            document.getElementById("regsbtn").value = "Register";
+        }
+    </script>
+</head>
+
+
+<body onload="referbyid()">
+    <div>
+        <img id="pic" width="300" height="300" border="1">
+
+    </div>
+    <div>
+        <form name="home">
+            Username:<input type="text" id="name">
+            Action :<input type="button" id="regsbtn">
+        </form>
+    </div>
+</body>
+
+</html>

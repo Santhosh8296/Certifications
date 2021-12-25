@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Refering HTML elements by Common Reference Name
+        <!-- HTML elements can use common ref name -->
+        <!-- a common name enables to access all elements with one reference. javascrpit can access the elements with common name by using the function "document.getElementByName()" -->
+    </title>
+    <script>
+        function referbyclassname() {
+            var x = document.getElementsByName("pay");
+            alert("total no of payments methods" + x.length)
+        }
+    </script>
+    <style>
+        /* .welcome {
+            color: green;
+            background-color: black;
+        } */
+    </style>
+</head>
+
+<body onload="referbyclassname()">
+    <h2 class="welcome">welcome to Javascript</h2>
+    <div>
+        <fieldset>
+            <legend>Pyment Methods</legend>
+            <input type="radio" name="pay">COD<br>
+            <input type="radio" name="pay">Credit Card<br>
+        </fieldset>
+
+    </div>
+    <div>
+
+        </form>
+    </div>
+</body>
+
+</html>

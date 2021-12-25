@@ -1,0 +1,1187 @@
+Javascript output properties and methods:
+
+javascrpit is a client side scripting language that handles the client interactions on client browser it 
+provides various properties and methods that are used to render the output onto browser.
+
+1) alert()
+2) confirm()
+3) document.write()
+4) innerHtml()
+5) innerText()
+6) console.log()
+
+
+1) alert()
+
+    it is an output function in javascript that pops up a message box in the browser and displays the specified message. 
+    it will not allow to perfrom any another task untill or unless you confirm  the message.
+
+    Synatx:
+        alert("your Message");
+
+2) confirm()
+
+    it is an output function similar to alert but can confirm the user actions with 
+    ok and cancel buttons it is a boolean function that returns "true on ok" and "False on Cancel".
+
+    Synatx:
+    function funconfi(){
+        var x = confirm("Record will be deleted") // here a alert will be popuped and will ask you to click ok or cancel where ok indicate true and cancel indicates false for the next statement
+        (x==true)? alert("Record Deleted") : alert("Action Cancelled"); // this statement indicates that if x is true then alert of Record Deleted willbe popuped or if x is false then alert Action Cancelled will be popuped.
+    }
+
+3) document.write()
+
+    it is an output function of document object thatprints the ouptut in the same page but on anew screen. however 
+    the output is temporary abd it is cleaned up automatically when you reload the page. it allows to use thml markup for 
+    formatting the output.
+
+    Note: alert and confirm fucntion will not allow any markup to format the message.
+
+    Synatx: 
+
+        function docwrite() {
+            name = document.getElementById("Name").value;
+            msg = document.write("Hello! my name is: " + name);
+        }
+    
+
+4) innerHtml()
+
+        it is a property used with HTML elements that can present text it also allows various formats for text by using 
+        markup or formatting functions.
+
+        Synatx: 
+
+
+
+5) innerText()
+
+        it is similar to innerHTML but it will not allow any formats with markup or functions.
+
+        Syntax:
+
+
+
+6) console.log()
+
+        it is an output fucntion that which is used in javascript to print the 
+        output in browser console which is available in the browser debugger that you can invoke by using "F12" fucnction key. 
+
+        Syntax:
+
+
+
+Handling inputs in javascrpit:
+
+    javascrpit is a client side scripting lanaguage, that can accepts inputs from the browser and handle manpulations on input values.
+
+    client side inputs can be handeled by using two types they are 
+        1) prompt 
+        2) HTML form input elements
+
+        1) prompt:
+                it is a function of javascrpit document object.
+
+                it popsup an input box in the browser that allows the user to provide the input values and also it returns the input value
+                when clciked "ok" and returns null value when clicked "cancel".
+
+                Example:
+
+                <!-- <!DOCTYPE html>
+                <html>
+
+                <head>
+                    <script>
+                        function propmpt() {
+                            var name = prompt("folder name: ", "New_Folder");
+                            var msg = document.getElementById("msg");
+                            (name == null) ? document.write("Action Cancelled") : msg.innerHTML += "Folder Created Successfully: " + name + "<br>";
+                        }
+                    </script>
+                </head>
+
+                <body>
+                    <div>
+                        <form>
+                            <input type="button" value="Create Folder" onclick="propmpt()">
+                            <div id="msg">
+
+                            </div>
+                        </form>
+                    </div>
+                </body>
+
+                </html> -->
+
+        2) HTML form input elements:
+
+            HTML provides several elements that allow the user to input values.
+
+            javascrpit can access the values from form elements and use in manpulations.
+
+            javascript refers the elements and their values dynamically by using various refernce methods by name, id,...etc.
+
+            the form elements used form inputs are textbox, radio button, listbox, dropdownlist,...etc. 
+
+
+            Example:
+
+            <!-- <!DOCTYPE html>
+            <html>
+            
+                <head>
+                    <style>
+                        .div {
+                            background-color: green;
+                            color: white;
+                            display: inline-block;
+                            border: solid black;
+                        }
+                        
+                    </style>
+                    <script>
+                        function Register() {
+                            var Fname = document.getElementById("FN").value;
+                            var Lname = document.getElementById("LN").value;
+                            var Dob = document.getElementById("DOB").value;
+                            var Cnum = document.getElementById("CN").value;
+                            var Email = document.getElementById("email").value;
+                            var SAddress = document.getElementById("address").value;
+                            var City = document.getElementById("city").value;
+                            var State = document.getElementById("state").value;
+                            var Country = document.getElementById("country").value;
+                            var Pass = document.getElementById("pass").value;
+                            var Conpass = document.getElementById("conpass").value;
+                
+                            document.getElementById("finame").innerText = Fname;
+                            document.getElementById("lsname").innerText = Lname;
+                            document.getElementById("dob").innerText = Dob;
+                            document.getElementById("pn").innerText = Cnum;
+                            document.getElementById("emil").innerText = Email;
+                        }
+                        function Reset() {
+                
+                        }
+                    </script>
+                </head>
+                
+                <body>
+                    <div class="div">
+                        <form>
+                            <fieldset id="Registration">
+                                <legend>Registration Form</legend>
+                                <dl>
+                                    <dt>First Name:</dt>
+                                    <dd><input type="text" pattern="[a-zA-Z]" id="FN"></dd>
+                                    <dt>Last Name:</dt>
+                                    <dd><input type="text" pattern="[a-zA-Z]" id="LN"></dd>
+                                    <dt>Date of Birth:</dt>
+                                    <dd><input type="date" id="DOB"></dd>
+                                    <dt>Phone Number:</dt>
+                                    <dd><input type="number" pattern="[0-9]" id="CN"></dd>
+                                    <dt>Email Id:</dt>
+                                    <dd><input type="email" id="email"></dd>
+                                    <dt>Street Address:</dt>
+                                    <dd><input type="text" pattern="[a-zA-Z0-9]" id="address"></dd>
+                                    <dt>City | State | Country | Zipcode :</dt>
+                                    <dd><select name="select_city" id="city">
+                                            <option value="Texas">Texas</option>
+                                            <option value="Cleveland">Cleveland</option>
+                                            <option value="Akron">Akron</option>
+                                            <option value="NewJersy">NewJersy</option>
+                                            <option value="Atlanta">Atlanta</option>
+                                        </select></dd>
+                
+                                    <dd>
+                                        <select name="select_state" id="state">
+                                            <option value="Dallas">Dallas</option>
+                                            <option value="Ohio">Ohio</option>
+                                            <option value="Buffallo">Buffallo</option>
+                                            <option value="NewYork">NewYork</option>
+                                            <option value="Georgia">Georgia</option>
+                                        </select>
+                                    </dd>
+                                    <dd>
+                                        <select name="select_country" id="country">
+                                            <option value="India">India</option>
+                                            <option value="USA">USA</option>
+                                            <option value="Landon">Landon</option>
+                                            <option value="Europe">Europe</option>
+                                            <option value="Canada">Canada</option>
+                                        </select>
+                                    </dd>
+                                    <dt>Password:</dt>
+                                    <dd><input type="password" pattern="[a-zA-Z0-9]" id="pass"></dd>
+                                    <dt>Conform-Password:</dt>
+                                    <dd><input type="password" pattern="[a-zA-Z0-9]" id="conpass"></dd>
+                                    <dt><input type="button" id="reset" value="Reset" onclick="Reset()"></dt>
+                                    <dd><input type="button" id="submit" value="Register" onclick="Register()"></dd>
+                                </dl>
+                            </fieldset>
+                
+                            <br>
+                
+                            <fieldset id="showdetails">
+                                <legend>Profile info</legend>
+                                <table width="400" border="1">
+                                    <tr>
+                                        <td>First Name</td>
+                                        <td id="finame"></td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>Last Name</td>
+                                        <td id="lsname"></td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>DOB</td>
+                                        <td id="dob"></td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>Phone Number</td>
+                                        <td id="pn"></td>
+                                    </tr>
+                
+                                    <tr>
+                                        <td>Email Id</td>
+                                        <td id="emil"></td>
+                                    </tr>
+                                </table>
+                            </fieldset>
+                        </form>
+                    </div>
+                </body>
+                
+                </html> -->
+
+
+
+Javascript Variables
+
+    variables are simply storage locations in memeory where you can store a value and use it as a part of any expression.
+
+    javascript varaibles are implicitly typed. that is the datatype of varaible will be determined according to the value assigned. they do not have any predefined datatypes.
+
+    javascript allows to use varaibles directly without defining it. if javascript is not in strict mode.
+    
+        Syntax:
+                
+            x=10; //Javascript will consider as variable with out defining it if we dont use strict mode.
+
+            var x=10; // defining the varaible x and even if we use strict mode there will no issue 
+
+
+    javascript variables are declared by using following keywords:
+
+    1) var
+    2) let 
+    3) const
+
+    1) var:
+
+        var is used to define a function scope and it is accessible anywhere within the function.
+
+
+    2) let:
+
+        let is used to define block scope variable so that it cannot accessible outside the specfied block.
+        
+        Example:
+        in this example the output will not be printed because y is declared inside the if block and we are 
+        asking to print the y values outside of the if block since y is a block level variable by declaring y value using let 
+        <!-- <!DOCTYPE html>
+            <html>
+            
+            <head>
+                <script>
+                    function f1() {
+                        var x = 10;
+                        if (x == 10) {
+                            let y = 20;
+            
+                        }
+                        document.write("x= " + x + " y= " + y); // 
+                    }
+                    f1();
+                </script>
+            </head>
+            
+            <body>
+            
+            </body>
+            
+            </html> -->
+    
+    Note: 
+    the varables declared using var and let will allow shadowing, which is the process of defining same name identifier with different value.
+
+    Example: 
+
+    <!-- <!DOCTYPE html>
+        <html>
+
+        <head>
+            <script>
+                // function f1() {
+                //     var x = 10;
+                //     if (x == 10) {
+                //         let y = 20;
+
+                //     }
+                //     document.write("x= " + x + " y= " + y);
+                // }
+
+                function f1(){
+                    var x=10;
+                    if (x==10){
+                        var x=20;
+                    }
+                    document.write("x= "+x);
+                }
+                f1();
+            </script>
+        </head>
+
+        <body>
+
+        </body>
+
+        </html> -->
+    
+        3) const:
+            
+            the keyword const is used to declare a constant value that cannot be overidden. that is it will not allow shadowing.
+
+            Synatx:
+
+                fucntion f2(){
+                    const x=10;
+                    if (x==10)
+                    {
+                        const x=20;
+                    }
+                    document.write("x= "+x);
+                } f2();
+        
+    Note:
+
+        javascrpit variables supports hoisting, which is a process used by tanslator where it will process the code declaration 
+        followed by code rendering.irrespective of the sequential order of the statements.
+
+        Example:
+            
+            function f1(){
+                x=10; //here first i am assigning the value 
+                document.write("x: " +x);
+                var x; //later here i am declaring the variable x using var keyword. this process is called hoisting
+            }
+    
+global scope:
+    
+    the global scope for the variable is defined by declaring it outside the function and with in the script element.
+
+    Syntax:
+
+    <!-- <script>
+        var x=20; //global scope variable 
+        function f1(){
+            document.write("x= "+x);
+        }
+
+        function f2(){
+            document.write("y= "+x);
+        }
+        f1();
+        f2();
+    </script> -->
+
+    A global scope for variable can be defined within the function by using the keyword "window".
+
+    Synatax:
+
+    <!-- <script>
+            function f1(){
+                window.x=10;
+            }
+            function f2(){
+                document.write("y= "+x);
+            }
+            f1();
+            f2();
+    </script> -->
+
+    javascrpit varables are case sensitive.
+
+        Synatx:
+
+        const x =10; //x is different identifier from X in javascript.
+        const X=20;
+
+    A javascrpit varaibel must satrt with alphabet or '_'(underscore) not with number.
+
+    Example:
+
+        var name; //valid
+        var _email; //valid
+        var 24name; //invalid because variable name should not start with a number 
+        var firstname; // invalid
+        var first_name; // valid
+
+javascript Datatypes:
+
+    A datatype determines the type of value that can be stored in a refernce.
+
+    javascrpit refernces are implicitly typed their data type will be determined according to value.
+
+    the datatype supported by javascript to store vlaues in a refernce are classified into two types they are..
+
+    1) Primitive type
+    2) non-primitive type
+
+    1) Primitive Types:
+
+        the primitive type are stored in memory stack and the stack is accessibile with the mechanism last in first out (LIFO).
+        they have a fixed value and the range of value changes according to the standardization.
+
+        A single memory space is allocated to store the value and variable directly holds the value.
+
+        if you asign the variable to another variable then the same value will be stored.
+        
+        the primitive types are created at compile time and stored in a stac. hence they are also known as value types.
+
+        the javascript value types are.. 
+
+            1) Number
+            2) String
+            3) boolean
+            4) null
+            5) undefined
+            
+            1) Number
+
+                A number type in javascript is used to specify signed or unsigned integer. 
+
+                Syntax:
+                    var x=-10; // signed integer
+                    var x=10; // unsigned integer
+
+                A number type can also be floating point or decimal point.
+
+                Syntax: 
+                    var x=4.5 //floating point
+                    var x=12.97685 //decimal point
+
+                A number type in javascript can also refer to exponent value.
+
+                Syntax: 
+                    var x=2e3; //exponential value
+
+                    A string representation starting with number type value can be converted into a number in javascript by using the methods.
+
+                    1) parseInt()
+
+                        var x = "10AB" //  by using the parseInt(x) then the string will converted into the number as 10 
+                        Syntax:
+                            var a = "10AB";
+                            var b = "20";
+                            var c = parseInt(a) + parseInt(b);
+                            document.write("the value of c is: " +c); 
+                            
+                            //here the overall output is "the value of c is: 30"
+
+                    2) parseFloat()
+            
+            
+            2) String
+
+                A string is a group of charachters enclosed in Quotes either double quotes(" ") or single quotes(' ').
+
+                teh Quotes include:
+
+                1) Double Quotes (" ")
+
+                2) Single Quotes (' ')
+
+                the single quotes are must be used for substrings.
+
+                Syntax:
+                    onclick = "alert('hello!')"
+
+
+                A string representation can use special charachters but compiler or interpreter cannot print certain type of special characters.
+                it requires the use of escape sequence characters.
+
+                Syntax: 
+
+                                Escape sequence                   Prints
+                                    \\                              \
+                                    \"                              "
+
+
+            3) boolean
+
+                A boolean types in javascrpit stores either true or false. the boolean values are keyword "true/false", 
+                the boolean conditions are directly satisfied by using the keywords true or false.
+
+                Syntax:
+                
+                var x=true;
+                if (x==true)
+                {
+                    alert("valid");
+                }
+
+
+            4) null
+
+                the null type is a primitve type which specifies that a refernce is not created dynamically. the keyword null is 
+                returned when reference is not defined. the keyword null is used to verify whether refernce is defined or not. if a value is 
+                not specified in any reference then it is verified by using empty " ".
+
+                Syntax:
+                    var name=" ";
+
+                    if a refernce is not defined you can verify by using null.
+
+                    Synatax:
+                        name == null; //true or false
+                
+                Example:
+
+
+
+            5) undefined
+
+                Javascript Variables are implicitly typed.
+
+                the datatype will be determined according to the value assigned. if value is not defined to any refernce then it will return undefined.
+
+                Syntax: 
+                    var name=" "; // String datatype.
+                    var name =10;//number datatype.
+                    var name; //undefined datatype.
+                    the keyword undefined is used to verify whether a value is defined for any refernce .
+                    name ==undefined; //true or false.
+    
+
+    2) non-primitive type:
+        
+        the non-primitve types are refernce types stored in memory heap. the heap memory specifies multiple locations to sotre values.
+
+        hence they dont have any fixed value. the value varies according to browser memory.
+
+        the javascrpit non-primitive types are:
+            
+            1) Array
+            2) Object
+            3) Regualr Expressions
+
+            1) Array
+
+                Arrays in programming are used to reduce overhead and complexity. Arrays can reduce overhead by  storing th evalues
+                in sequential order. Arrays can reduce complexity by stroing the multiple values under the refernce of single name.
+
+                javascrpit array is a collection of various types of values and javascript arraysize can be changed dynamically.
+                javascript array type represents a stack, queue, hashtable or enumeration.
+
+                the array types are defined by using "[]" or Array() constructor.
+
+                Syntax: 
+                var names=[];
+                var names = new Array();
+
+                Examples:
+
+                    <!-- <!DOCTYPE html>
+                    <html>
+
+                    <head>
+                        <script>
+                            function ProductInfo() {
+                                var id = document.getElementById("pid").value;
+                                var name = document.getElementById("name").value;
+                                var pp = document.getElementById("price").value;
+                                var sa = document.getElementById("SA").value;
+                                var product = [id, name, pp, sa];
+                                document.getElementById("pdid").innerText = product[0];
+                                document.getElementById("pdne").innerText = product[1];
+                                document.getElementById("pdpe").innerText = product[2];
+                                document.getElementById("skay").innerText = product[3];
+
+                            }
+                        </script>
+                    </head>
+
+                    <body>
+                        <div>
+                            <form>
+                                Product Id: <input type="number" id="pid">
+                                Produ Name: <input type="text" id="name">
+                                Product Price: <input type="number" id="price">
+                                Stock Availability: <select name="stock" id="SA">
+                                    <option value="Select the Product Availabiltiy Status">Product Availabiltiy Status</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <input type="button" value="Update Product Info" onclick="ProductInfo()">
+                            </form>
+                        </div>
+
+                        <div id="msg">
+                            <table border="1" id="msg">
+
+                                <tr>
+                                    <td> Product Id</td>
+                                    <td id="pdid"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Product Name</td>
+                                    <td id="pdne"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Product Price</td>
+                                    <td id="pdpe"></td>
+                                </tr>
+
+                                <tr>
+                                    <td> Stock Availabiltiy</td>
+                                    <td id="skay"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </body>
+
+                    </html> -->
+
+
+            2) Object
+
+                An object in javascript represents a class in object oriented programming. it defines a prototype for creating of instances.
+                it is a collectin of members like properties, methods, coonstructors,..etc. it encapsualtes all the members in "{}". javascript 
+                objects are bydefault static in nature. hence you can access the memebers directly by using objectname. 
+
+                    Example:
+
+                    
+            3) Regualr Expressions
+
+                Regular Expression is used to validate the format of the input value. it is a group of meta characters 
+                and qantifiers enclosed in "\ \". A regualr expression is verified with input value by using the function
+                "match()". it returns boolean true if the vlaues matches regular expression.
+                
+                the meta charachters and quantifiers used to build expressions are shown below.
+                tell user  to type:
+                Meta Characters ====> Description
+
+                [A-Z]           ====> Only UpperCase
+                [a-z]           ====> Only for LowerCase
+                [a-z A-Z] or [a-z]      ====> both UpperCase and LowerCase
+                [0-9] or \d             ====> only numeric
+                [a-z A-Z 0-9] or \w     ====> alpha numeric
+                [a,d,s]                 ====> only specified characters
+                [^a,d,s]                ====> exclude specified characters
+                \+ \_ \. \$ \@          ====> any individual special characters
+                [!@#$%&]                ====> all special characters
+                (?=[A-Z])               ====> atleast 1 uppercase letter 
+                (?=*[0-9])              ====> atleast 1 numeric
+                (?=*[!@#$%])            ====> atleast i special characters
+                \^                      ====> start with
+                $                       ====> ends with 
+
+                Quantifiers             ====> Descriptions
+
+                {4}                     ====> type exactly 4 characters 
+                {4,10}                  ====> type min 4 characters and max 10 characters
+                {4, }                   ====> type min 4 characters and max any number of characters
+
+                    Example:
+
+                        <!DOCTYPE html>
+                        <html>
+
+                        <head>
+                            <script>
+                                function verifypassword() {
+                                    var pwd = document.getElementById("txtpwd").value;
+                                    console.log("the password enterted is: " + pwd);
+                                    var msg = document.getElementById("msg");
+                                    console.log("the message that prompted is: " + msg);
+                                    var grade = document.getElementById("grade");
+
+                                    function showGrade(min, max, value, low, high) {
+                                        grade.min = min;
+                                        grade.max = max;
+                                        grade.value = value;
+                                        grade.low = low;
+                                        grade.high = high;
+                                    }
+                                    var pat = /(?=.*[A-Z])\w{4,15}/;
+                                    if (pwd.match(pat)) {
+                                        msg.innerHTML = "strong password";
+                                        showGrade(1, 100, 100, 0, 0);
+                                    }
+                                    else {
+                                        // window.alert("Please find the follwing pattern to enter the password:", "<br>" + "<ol type='1'><li>First Letter should be a Capital Letter from [A-z].</li><li>the Second Condition is from second letter to till 15th Letter it should be either small or capital alphabets from [a-zA-Z0-9] and also numbers from 0-9.</li></ol>");
+                                        if (pwd.length > 4) {
+                                            msg.innerHTML = "poor password";
+                                            showGrade(1, 100, 100, 60, 80);
+                                        }
+                                        else {
+                                            msg.innerHTML = "weak password";
+                                            showGrade(1, 100, 100, 40, 80);
+                                        }
+                                    }
+                                }
+                            </script>
+                        </head>
+
+                        <body>
+                            <div>
+                                <fieldset>
+                                    <legend>
+                                        Password:
+                                    </legend>
+                                    <input type="password" id="txtpwd" onkeyup="verifypassword()">
+                                    <meter min="1" max="100" value="0" low="0" high="0" id="grade"></meter>
+                                    <span id="msg"></span>
+                                </fieldset>
+                            </div>
+                        </body>
+
+                        </html>
+
+
+    Javascript Operators:
+
+        Operator is an object in computer programming, which is used to evalaute any value. Operators are special characters in computer programming
+        used to build expressions. the problems in computer programming are resolved by using this expressions. our javascript expressions are classified
+        into following types..
+
+            Expression              ====> Description
+
+            STRING expression       ====> returns a string
+            Boolean exoression      ====> returns a boolean value
+            Arithmatic expressions  ====> returns a number
+            null expression         ====> returns null
+
+        the operators in computer programming are catogorized into various types based on the type of expressions they can build.
+        the javascript operators are classified into following types they are...
+            1) Arithmatic Operators
+            2) Comparison Operators(Relational Operators)
+            3) Bitwise Operators
+            4) Logical Operators
+            5) Assinment Operators
+            6) Special Operators
+
+
+            1) Arithmatic Operators: (+, -, *, /, %)
+
+                "++" increment operator ====> var a=10;a++ ====> result=11
+                "--" decrement operator ====> var a=10;a-- ====> result=9
+
+            2) Comparison Operators(Relational Operators):(>, <, >=, <=, ==, !=, ===, !==)
+
+
+            3) Bitwise Operators:
+
+
+
+            4) Logical Operators: (&&, ||, !)
+
+
+
+            5) Assinment Operators: (+=, -=, *=, /=, %=)
+
+                
+                Example:
+
+                    <!DOCTYPE html>
+                    <html>
+
+                    <head>
+                        <script>
+                            function AssignOp() {
+                                var java = document.getElementById("optJava");
+                                var dot = document.getElementById("optDot");
+                                var python = document.getElementById("optPython");
+                                var msg = document.getElementById("msg");
+                                var courses = "";
+                                if (java.checked) {
+                                    courses += java.value + "<br>";
+                                    console.log("List of Courses Selected till now: " + courses);
+                                }
+                                if (dot.checked) {
+                                    courses += dot.value + "<br>";
+                                    console.log("List of Courses Selected till now: " + courses);
+                                }
+                                if (python.checked) {
+                                    courses += python.value + "<br>";
+                                    console.log("List of Courses Selected till now: " + courses);
+                                }
+                                msg.innerHTML = "List of Selected courses are: " + "<br>" + courses;
+                                console.log("List of Courses Selected till now: " + courses);
+                            }
+                        </script>
+                    </head>
+
+                    <body>
+                        <div>
+                            <fieldset>
+                                <legend border="1">Select Courses <br> Assignment Operators</legend>
+                                <ul>
+                                    <li><input type="checkbox" id="optJava" value="java">Java</li>
+                                    <li><input type="checkbox" id="optDot" value=".Net">.Net</li>
+                                    <li><input type="checkbox" id="optPython" value="Python">Python</li>
+                                </ul>
+                                <br>
+                                <input type="button" value="submit" onclick="AssignOp()">
+                            </fieldset>
+                            <br>
+
+                        </div>
+
+                        <div id="msg" align="center"></div>
+                    </body>
+
+                    </html>
+
+            6) Special Operators:
+
+
+
+    Javascript Control-Flow statements
+
+        A statement is a program instruction in computing system used to control the execution flow.
+
+        the statements are build by using Expressions and keywords. the statements in javascript are classified into following types they are..
+
+            1) Selection statements             ====> if, else, switch, case
+
+
+            2) Jump Statements                  ====> break, continue, return
+
+            
+            1) Selection statements:(if, else, switch, case)
+
+                "if" Statement:
+                    it is a decision making statement used to execute a set of statements based on the given boolean expressions. it comprises
+                    of following approaches.
+
+                        1) Forward Jump
+
+
+                        2) Simple decision
+                        3) Multi Level decision
+                        4) Nested decision
+
+
+                Multiple Conditions in Selection:
+
+
+
+                switch statements:
+
+                    A switch in electronics is used to interrupt the follow of electronics. in a computer programming a switch is used to control
+                    the execution flow.
+
+                    the switch statement represents a selector switch, which executes only the set of statements that match the given expression value.
+                    it defines the blocks of statements to execute by using "case" and "default".
+
+                    it uses a "jump" statement to terminate the execution. which can be "break" or "return".
+
+                    Example:
+
+                        <!DOCTYPE html>
+                        <html>
+
+                        <head>
+                            <script>
+                                function swcaw() {
+                                    var x = 0;
+                                    switch (x) {
+                                        case 0: document.write("Zero") + "<br>";
+                                            break;
+                                        case 1: document.write("One") + "<br>";
+                                            break;
+                                        case 2: document.write("Two") + "<br>";
+                                            break;
+                                        case 3: document.write("Three") + "<br>";
+                                            break;
+                                        default: document.write("Enter Number 0 to 3");
+                                            break;
+                                    }
+                                }
+                                swcaw();
+                            </script>
+                        </head>
+
+                        </html>
+
+                For Loop:
+
+                    we use for loop when number of iterations is known to us.
+
+                    Synatx:
+
+
+
+                While Loop:
+
+                    when you dont know the number of interations, then you have to use while loop.
+                
+                        Syntax:
+
+
+    Javascript built-in objects:
+
+    Javascript is a object based programming System that provides several built in objects to handle various interactions.
+
+    Every object comprises of a set of properties and methods that are accessible with reference of object or its instance.
+
+    javascript built in objects are..
+
+        1) Math 
+        2) Date
+        3) String
+        4) Array
+
+        1) Math:
+
+            
+        2) Date
+
+
+
+        3) String
+
+
+        4) Array:
+
+            Slice: it is used to extract elements from a specified index
+            
+            Splice: it can add or remove elements in to an array at a specified index.
+
+    
+    javascript browser objects:
+
+        javascript provides several browser objects that are used to handle various client side interactions and also to manupulate the elements in BOM hierarchy.
+
+        the browser objects are...
+
+            1) Window
+
+                Synatx:
+
+                    <!DOCTYPE html>
+                    <html>
+
+                    <head>
+                        <script>
+                            var newwindow;
+                            function vli() {
+                                newwindow = window.open("./imgs/HS.jpg", "Bridge", "width=800 height=600");
+                            }
+                        </script>
+                    </head>
+
+                    <body>
+                        <div>
+                            <img src="./imgs/HS.jpg" width="100" height="100" ondblclick="vli()">
+                            <p>Double Click on Image to view large</p>
+                            <input type="button" value="Close" onclick="newwindow.close()">
+                            <input type="button" value="print" onclick="window.print()">
+                        </div>
+                    </body>
+
+                    </html>
+            2) location
+
+                Example:
+
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+                    <style>
+                        dt {
+                            background-color: yellow;
+                            font-weight: bold;
+                        }
+                    </style>
+                    <script>
+                        function f1() {
+                            document.getElementById("details").style.display = "block";
+                            document.getElementById("host").innerHTML = location.host;
+                            var msg = " ";
+                            switch (location.protocol) {
+                                case "http:":
+                                    msg = "Page is accessed from server and secured";
+                                    break;
+                                case "file:":
+                                    msg = "Page is not accessed from server";
+                                    break;
+                            }
+                            document.getElementById("protocol").innerHTML = location.protocol + "<br>" + msg;
+                            document.getElementById("url").innerHTML = location.href;
+                        }
+                    </script>
+                </head>
+
+                <body>
+                    <div>
+                        <div align='center'>
+
+                            <input type="button" value="Get Client Location Details" onclick="f1()">
+                            <input type="button" value="Refresh" onclick="location.reload()">
+
+                        </div>
+                        <div id="details" style="display: none">
+
+                            <dl>
+                                <dt>Server Name / IP Address:</dt>
+                                <dd id="host"></dd>
+                                <dt>Protocol:</dt>
+                                <dd id="protocol"></dd>
+                                <dt>URL:</dt>
+                                <dd id="url"></dd>
+                            </dl>
+
+                        </div>
+                    </div>
+                </body>
+
+                </html>
+            3) Navigator
+
+
+            Example:
+
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+                    <script>
+                        function f1() {
+                            document.getElementById("family").innerHTML = navigator.appName;
+                            document.getElementById("lang").innerHTML = navigator.language;
+                            document.getElementById("cookie").innerHTML = navigator.cookieEnabled;
+                            document.getElementById("agent").innerHTML = navigator.userAgent;
+
+
+                            for (var i = 0; i < navigator.plugins.length; i++) {
+                                document.getElementById("plug").innerHTML = navigator.plugins[i].name + "<br>";
+                            }
+                            var msg = document.getElementById("msg");
+                            if (navigator.plugins["chrome pdf viewer" == undefined]) {
+                                msg.innerHTML = "no";
+                            }
+                            else {
+                                msg.innerHTML = "yes";
+                            }
+                        }
+                    </script>
+                </head>
+
+                <body>
+                    <div align="center">
+                        <input type="button" value="Get Browser Details" onclick="f1()">
+                    </div>
+                    <br>
+                    <div>
+                        <dl>
+                            <dt>Browser Family:</dt>
+                            <dd id="family"></dd>
+                            <dt>Browser Language:</dt>
+                            <dd id="lang"></dd>
+                            <dt>Cookie Enabled/Disabled:</dt>
+                            <dd id="cookie"></dd>
+                            <dt>Supported On:</dt>
+                            <dd id="agent"></dd>
+                            <dt>Plugins Supported:</dt>
+                            <dd id='plug'></dd>
+                            <dt>Can User View Pdf Document:</dt>
+                            <dd id="msg"></dd>
+                        </dl>
+                    </div>
+                </body>
+
+                </html>
+            4) Histroy
+
+
+                Example:
+
+                    <!DOCTYPE html>
+                    <html>
+
+                    <head>
+                        <script>
+                            function f1() {
+                                if (history.length > 3) {
+                                    alert("Register for more!");
+                                    location.href = "datebuiltinobj.html";
+                                }
+                                else {
+                                    document.write("you can max view 3 pages for free");
+                                }
+                            }
+                        </script>
+                    </head>
+
+                    <body onload="f1()">
+
+                    </body>
+
+                    </html>
+            5) document
+
+
+
+    Javascript Events:
+
+        Event is a message sent by sender to its subscriber to notify the change.
+        it uses a software communication pattern called observer.
+        
+
+        Event Handler:
+
+            An event handler uses delegate mechanism which is a function pointer. the event defined for html element will look for 
+            specified function and notify the change.
+
+            Example:
+
+                <input type="button" value="Submit" onclick="f1()"> //here onclick is a event handler.
+
+        Event arguments and object properties:
+
+            Every event handler of javascript provides access to the object proprties by using the keyword "this" and the 
+            event arguments by using the keyword "event".
+
+            Example:
+
+                <!DOCTYPE html>
+                <html>
+
+                <head>
+                    <script>
+                        function f1(obj, e) {
+                            document.write("Button Name: " + obj.name + "<br>" + "Button Value: " + obj.value + "<br>" + "Clicked at x: " + e.clientx);
+                        }
+                    </script>
+                </head>
+
+                <body>
+                    <input type="button" value="Submit" name="btnSubmit" onclick="f1(this,event)">
+                </body>
+
+                </html>
+        
+
+
+
+

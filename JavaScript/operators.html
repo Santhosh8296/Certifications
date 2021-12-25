@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var products = ["./imgs/HS.jpg", "./imgs/nw1.jpg", "/imgs/newwindow.jpg"];
+        var count = 0;
+        function previousclick() {
+            var pic = document.getElementById("pic");
+            count--;
+            pic.src = products[count];
+
+        }
+        function nextclcik() {
+            var pic = document.getElementById("pic");
+            count++;
+            pic.src = products[count];
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <table border="1" width="500" height="500" cellspacing="5">
+            <tr>
+                <td>
+                    <input type="button" value="previous" onclick="previousclick()">
+                </td>
+                <td>
+                    <img src="./imgs/HS.jpg" width="600" height="300" id="pic">
+                </td>
+                <td>
+                    <input type="button" value="next" onclick="nextclcik()">
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

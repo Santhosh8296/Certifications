@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        function forloop() {
+            var users = [{ Name: 'john' },
+            { Name: 'david' },
+            { Name: 'dhoni' }, { Name: 'Richard' },
+            { Name: 'Jack' }];
+            var Username = document.getElementById("uname").value;
+            var msg = document.getElementById("msg");
+            for (var i = 0; i <= users.length; i++) {
+                if (Username == users[i].Name) {
+                    msg.innerHTML = "Username is already taken!";
+                }
+                else {
+                    msg.innerHTML = "Available";
+                }
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <fieldset>
+            <legend>names</legend>
+            Username:
+            <input type="text" id="uname" onkeyup="forloop()">
+            <span id="msg"></span>
+        </fieldset>
+    </div>
+</body>
+
+</html>

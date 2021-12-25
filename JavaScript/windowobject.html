@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var newwindow;
+        function vli() {
+            newwindow = window.open("./imgs/HS.jpg", "Bridge", "width=800 height=600");
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <img src="./imgs/HS.jpg" width="100" height="100" ondblclick="vli()">
+        <p>Double Click on Image to view large</p>
+        <input type="button" value="Close" onclick="newwindow.close()">
+        <input type="button" value="print" onclick="window.print()">
+    </div>
+</body>
+
+</html>

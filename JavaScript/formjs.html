@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .div {
+            background-color: green;
+            color: white;
+            display: inline-block;
+            border: solid black;
+        }
+        
+    </style>
+    <script>
+        function Register() {
+            var Fname = document.getElementById("FN").value;
+            var Lname = document.getElementById("LN").value;
+            var Dob = document.getElementById("DOB").value;
+            var Cnum = document.getElementById("CN").value;
+            var Email = document.getElementById("email").value;
+            var SAddress = document.getElementById("address").value;
+            var City = document.getElementById("city").value;
+            var State = document.getElementById("state").value;
+            var Country = document.getElementById("country").value;
+            var Pass = document.getElementById("pass").value;
+            var Conpass = document.getElementById("conpass").value;
+
+            document.getElementById("finame").innerText = Fname;
+            document.getElementById("lsname").innerText = Lname;
+            document.getElementById("dob").innerText = Dob;
+            document.getElementById("pn").innerText = Cnum;
+            document.getElementById("emil").innerText = Email;
+        }
+        function Reset() {
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="div">
+        <form>
+            <fieldset id="Registration">
+                <legend>Registration Form</legend>
+                <dl>
+                    <dt>First Name:</dt>
+                    <dd><input type="text" pattern="[a-zA-Z]" id="FN"></dd>
+                    <dt>Last Name:</dt>
+                    <dd><input type="text" pattern="[a-zA-Z]" id="LN"></dd>
+                    <dt>Date of Birth:</dt>
+                    <dd><input type="date" id="DOB"></dd>
+                    <dt>Phone Number:</dt>
+                    <dd><input type="number" pattern="[0-9]" id="CN"></dd>
+                    <dt>Email Id:</dt>
+                    <dd><input type="email" id="email"></dd>
+                    <dt>Street Address:</dt>
+                    <dd><input type="text" pattern="[a-zA-Z0-9]" id="address"></dd>
+                    <dt>City | State | Country | Zipcode :</dt>
+                    <dd><select name="select_city" id="city">
+                            <option value="Texas">Texas</option>
+                            <option value="Cleveland">Cleveland</option>
+                            <option value="Akron">Akron</option>
+                            <option value="NewJersy">NewJersy</option>
+                            <option value="Atlanta">Atlanta</option>
+                        </select></dd>
+
+                    <dd>
+                        <select name="select_state" id="state">
+                            <option value="Dallas">Dallas</option>
+                            <option value="Ohio">Ohio</option>
+                            <option value="Buffallo">Buffallo</option>
+                            <option value="NewYork">NewYork</option>
+                            <option value="Georgia">Georgia</option>
+                        </select>
+                    </dd>
+                    <dd>
+                        <select name="select_country" id="country">
+                            <option value="India">India</option>
+                            <option value="USA">USA</option>
+                            <option value="Landon">Landon</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Canada">Canada</option>
+                        </select>
+                    </dd>
+                    <dt>Password:</dt>
+                    <dd><input type="password" pattern="[a-zA-Z0-9]" id="pass"></dd>
+                    <dt>Conform-Password:</dt>
+                    <dd><input type="password" pattern="[a-zA-Z0-9]" id="conpass"></dd>
+                    <dt><input type="button" id="reset" value="Reset" onclick="Reset()"></dt>
+                    <dd><input type="button" id="submit" value="Register" onclick="Register()"></dd>
+                </dl>
+            </fieldset>
+
+            <br>
+
+            <fieldset id="showdetails">
+                <legend>Profile info</legend>
+                <table width="400" border="1">
+                    <tr>
+                        <td>First Name</td>
+                        <td id="finame"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Last Name</td>
+                        <td id="lsname"></td>
+                    </tr>
+
+                    <tr>
+                        <td>DOB</td>
+                        <td id="dob"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Phone Number</td>
+                        <td id="pn"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Email Id</td>
+                        <td id="emil"></td>
+                    </tr>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

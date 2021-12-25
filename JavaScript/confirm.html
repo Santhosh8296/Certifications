@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Javascript output properties and Methods(Confirm)
+        <!-- HTML elements can use common ref name -->
+        <!-- a common name enables to access all elements with one reference. javascrpit can access the elements with common name by using the function "document.getElementByName()" -->
+    </title>
+    <script>
+        function confirmfun() {
+            x = confirm("Record will be Deleted");
+            (x == true) ? alert("record deleted") : alert("Action Cancelled");
+        }
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h2 class="welcome">welcome to Javascript output properties and Methods(Confirm)</h2>
+    <div>
+        <form>
+            <input type="button" value="Delete" onclick="confirmfun()">
+        </form>
+
+    </div>
+</body>
+
+</html>
