@@ -7,3 +7,7 @@ Ongoing List of Certification Course:
 
 Yet to start: 
   Angular, React, Node.js 
+  
+  
+  Tools Familiar with:
+    Notepad++, Visual Studio Code, Android Studio, Dreamviewer.
