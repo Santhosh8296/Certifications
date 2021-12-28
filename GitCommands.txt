@@ -30,4 +30,6 @@ how to navigate from master branch to new branch?
 
     inorder to create a new brnach we have to follow the below mentioned github commands.
 
-        git branch -b new_branch_name
+        git checkout -b new_branch_name
+
+         git push --set-upstream origin new_branch_name
