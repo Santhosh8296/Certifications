@@ -31,3 +31,9 @@ how to navigate from master branch to new branch?
     inorder to create a new brnach we have to follow the below mentioned github commands.
 
         git branch -b new_branch_name
+
+how to switch from one branch to another branch?
+
+    git checkout branch_name
+
+    by using the above mentioned command we can switch from one branch to another branch
