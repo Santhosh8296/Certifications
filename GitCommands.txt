@@ -25,3 +25,9 @@ to undo the changes to the file that is already commited?
         ==> git reset HEAD filename //here we will move the file from the commited stage to uncommit stage 
         ==> git checkout -- filename  //once the file is moved from the commited stage to uncommit stage by using the above
                                         command now we use this checkout command to undo the changes that we perfomred.
+
+how to navigate from master branch to new branch?
+
+    inorder to create a new brnach we have to follow the below mentioned github commands.
+
+        git branch -b new_branch_name
