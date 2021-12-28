@@ -37,4 +37,10 @@ how to navigate from master branch to new branch?
 
     ANOTHER WAY TO PUSH THE CODE IS:
 
-        git push origin branch_name
+        git push origin branch_name  //here by using this command we will set the upstream to the different branch branch_name and by this step next time onwards we can directly
+        push the code to the same upstream directly by using the command 'git push'
+
+        if you are in new_branch and if you want to push the code to main branch then you have to set the upstream again to main branch by using the 
+        command mentioned below..
+
+            git push  --set-upstream origin main
