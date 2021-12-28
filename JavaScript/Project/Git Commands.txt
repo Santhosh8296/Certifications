@@ -31,4 +31,4 @@ how to move from master branch to another?
     inorder to move from master branch to another branch we should have the branch available that which we are willing to move 
     and we have use the commands mentioned below..
 
-        git checkout -b new_branch_name
+        git checkout -b new_branchname
