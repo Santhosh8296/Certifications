@@ -44,3 +44,8 @@ how to navigate from master branch to new branch?
         command mentioned below..
 
             git push  --set-upstream origin main
+
+
+how to check that in which barch are we in Currently?
+
+    git branch // by using this command we can check that Currently in which branch are we in.
