@@ -32,7 +32,7 @@ how to navigate from master branch to new branch?
 
         git checkout -b new_branch_name
 
-         git push --set-upstream origin new_branch_name
+         git push --set-upstream origin new_branch_name.
 
 
     ANOTHER WAY TO PUSH THE CODE IS:
